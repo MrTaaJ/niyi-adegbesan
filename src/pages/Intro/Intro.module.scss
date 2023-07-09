@@ -1,14 +1,17 @@
+@use '../../scss/global/colors' as colors;
+@use '../../scss/utils/functions' as fn;
+@import '../../scss/utils/mixins';
+@import '../../scss/utils/breakpoints';
 @import url('https://fonts.googleapis.com/css2?family=Manrope:wght@200;300;400;500;600;700;800&display=swap');
 
 .introContainer {
+  @include flex_column;
+  @include flex_centered;
   position: fixed;
   width: 100vw;
   height: 100vh;
-  background-color: #000000;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-flow: column;
+  background-color: colors.$dark-bg;
+  gap: fn.rem(8);
 
   .introName {
     text-transform: uppercase;
