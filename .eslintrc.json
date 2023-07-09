@@ -1,0 +1,38 @@
+{
+  "env": {
+    "browser": true,
+    "es2021": true,
+    "jest": true
+  },
+  "extends": [
+    "react-app",
+    "react-app/jest",
+    "eslint:recommended",
+    "plugin:react/recommended",
+    "plugin:prettier/recommended"
+  ],
+  "parserOptions": {
+    "ecmaVersion": "latest",
+    "sourceType": "module"
+  },
+  "plugins": ["react", "prettier"],
+  "rules": {
+    "quotes": [
+      "warn",
+      "single",
+      {
+        "avoidEscape": true
+      }
+    ],
+    "no-unused-vars": [
+      1,
+      {
+        "args": "after-used",
+        "argsIgnorePattern": "^_"
+      }
+    ],
+    "no-console": ["error", { "allow": ["error", "warn", "info"] }],
+    "react/jsx-uses-react": "off",
+    "react/react-in-jsx-scope": "off"
+  }
+}
