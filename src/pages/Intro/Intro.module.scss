@@ -2,7 +2,6 @@
 @use '../../scss/utils/functions' as fn;
 @import '../../scss/utils/mixins';
 @import '../../scss/utils/breakpoints';
-@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@200;300;400;500;600;700;800&display=swap');
 
 .introContainer {
   @include flex_column;
@@ -17,7 +16,7 @@
 
   .introName {
     text-transform: uppercase;
-    font-family: Manrope;
+    font-family: 'Manrope';
     font-size: clamp(fn.rem(28), fn.rem(16) + 2vw, fn.rem(56));
     font-weight: 500;
     line-height: clamp(fn.rem(32), fn.rem(20) + 3vw, fn.rem(60));

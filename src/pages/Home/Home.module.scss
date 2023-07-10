@@ -1,0 +1,23 @@
+@use '../../scss/global/colors' as colors;
+@use '../../scss/utils/functions' as fn;
+@import '../../scss/utils/mixins';
+@import '../../scss/utils/breakpoints';
+
+.homeContainer {
+  @include flex_centered;
+  @include flex_column;
+
+  .avatarContainer {
+    @include flex_centered;
+    width: fn.rem(135);
+    height: fn.rem(135);
+    border-radius: 50%;
+  }
+
+  .dark {
+    border: solid fn.rem(2) colors.$light-bg;
+  }
+  .light {
+    border: solid fn.rem(2) colors.$dark-bg;
+  }
+}

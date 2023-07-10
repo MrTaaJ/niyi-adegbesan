@@ -1,29 +1,32 @@
 //REACT DEFAULT
-import { useEffect, useState } from 'react'
+import { useContext } from 'react'
+import { ThemeContext } from '../../contexts/ThemeContext'
 
-//components
-import Intro from '../Intro'
+//COMPONENTS
 import Layout from '../../layout/Layout'
+import Container from '../../layout/Container'
+
+//STYLES
+import styles from './Home.module.scss'
+import Avatar from '../../assets/Hero/avatar.svg'
 
 function Home() {
-  const [display, setDisplay] = useState(true)
-
-  useEffect(() => {
-    const interval = setInterval(() => {
-      setDisplay(false)
-    }, 6000)
-    return () => clearInterval(interval)
-  }, [])
+  const { light } = useContext(ThemeContext)
   return (
-    <div>
-      {display ? (
-        <Intro />
-      ) : (
-        <Layout>
+    <Layout>
+      <Container>
+        <div className={styles.homeContainer}>
+          <div
+            className={`${styles.avatarContainer} ${
+              light ? styles.light : styles.dark
+            }`}
+          >
+            <img className={styles.avatar} src={Avatar} alt='avatar' />
+          </div>
           <h1>Welcome My Guy</h1>
-        </Layout>
-      )}
-    </div>
+        </div>
+      </Container>
+    </Layout>
   )
 }
 

@@ -1,15 +1,18 @@
 // REACT DEFAULTS
 import { Helmet, HelmetProvider } from 'react-helmet-async'
 import { PropTypes } from 'prop-types'
+import { useContext } from 'react'
+import { ThemeContext } from '../../contexts/ThemeContext'
 
 // // COMPONENTS
-// import NavBar from '../NavBar'
+import NavBar from '../NavBar'
 // import Footer from '../Footer'
 
 // STYLES
 import styles from './Layout.module.scss'
 
 const Layout = ({ title, description, children }) => {
+  const { light, setLight } = useContext(ThemeContext)
   return (
     <HelmetProvider>
       <Helmet htmlAttributes={{ lang: 'en' }}>
@@ -17,8 +20,9 @@ const Layout = ({ title, description, children }) => {
         <meta name='description' content={description} />
       </Helmet>
 
-      <main className={styles.container}>
-        {/* <NavBar /> */}
+      <main className={`${styles.main} ${light ? styles.light : styles.dark}`}>
+        <NavBar />
+        <button onClick={() => setLight(!light)}></button>
         {children}
         {/* <Footer /> */}
       </main>

@@ -1,0 +1,21 @@
+@use '../../scss/global/colors' as colors;
+@use '../../scss/utils/functions' as fn;
+@import '../../scss/utils/mixins';
+@import '../../scss/utils/breakpoints';
+
+.navContainer {
+  @include flex;
+  @include flex_justifyBetween;
+  padding-block: fn.rem();
+
+  .logoContainer {
+    @include flex;
+    gap: fn.rem(10);
+
+    .navLogo {
+      background-position: center center;
+      background-size: cover;
+      background-repeat: no-repeat;
+    }
+  }
+}
