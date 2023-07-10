@@ -11,16 +11,17 @@
   width: 100vw;
   height: 100vh;
   background-color: colors.$dark-bg;
-  gap: fn.rem(8);
+  gap: fn.rem(10);
+  animation: IntroContainer 1s ease-in forwards;
+  animation-delay: 5s;
 
   .introName {
     text-transform: uppercase;
     font-family: Manrope;
-    font-size: 28px;
+    font-size: clamp(fn.rem(28), fn.rem(16) + 2vw, fn.rem(56));
     font-weight: 500;
-    line-height: 32px;
+    line-height: clamp(fn.rem(32), fn.rem(20) + 3vw, fn.rem(60));
     letter-spacing: 0em;
-    text-align: left;
     color: #ffffff;
     opacity: 0;
     transform: scale(0.2);
@@ -29,7 +30,7 @@
   }
 
   .introLoader {
-    width: 364px;
+    width: min(80%, fn.rem(1440));
     height: 2px;
     border-radius: 10px;
 
@@ -40,7 +41,23 @@
       background-color: #ffffff;
       animation: IntroLoaderWidth 2s ease-in-out forwards;
     }
+
+    @include breakpoint-up(md) {
+      width: 70%;
+    }
+
+    @include breakpoint-up(xxl) {
+      width: 65%;
+    }
+
+    @include breakpoint-up(xxxl) {
+      width: 60%;
+    }
   }
+}
+
+.displayNone {
+  display: none;
 }
 
 @keyframes IntroLoaderWidth {
@@ -48,64 +65,64 @@
     width: 0px;
   }
   5% {
-    width: calc(0.05 * 364px);
+    width: 5%;
   }
   10% {
-    width: calc(0.1 * 364px);
+    width: 10%;
   }
   15% {
-    width: calc(0.15 * 364px);
+    width: 15%;
   }
   20% {
-    width: calc(0.2 * 364px);
+    width: 20%;
   }
   25% {
-    width: calc(0.25 * 364px);
+    width: 25%;
   }
   30% {
-    width: calc(0.3 * 364px);
+    width: 30%;
   }
   35% {
-    width: calc(0.35 * 364px);
+    width: 35%;
   }
   40% {
-    width: calc(0.4 * 364px);
+    width: 40%;
   }
   45% {
-    width: calc(0.45 * 364px);
+    width: 45%;
   }
   50% {
-    width: calc(0.5 * 364px);
+    width: 50%;
   }
   55% {
-    width: calc(0.55 * 364px);
+    width: 55%;
   }
   60% {
-    width: calc(0.6 * 364px);
+    width: 60%;
   }
   65% {
-    width: calc(0.65 * 364px);
+    width: 65%;
   }
   70% {
-    width: calc(0.7 * 364px);
+    width: 70%;
   }
   75% {
-    width: calc(0.75 * 364px);
+    width: 75%;
   }
   80% {
-    width: calc(0.8 * 364px);
+    width: 80%;
   }
   85% {
-    width: calc(0.85 * 364px);
+    width: 85%;
   }
   90% {
-    width: calc(0.9 * 364px);
+    width: 90%;
   }
   95% {
-    width: calc(0.95 * 364px);
+    width: 95%;
   }
   100% {
-    width: calc(1 * 364px);
+    width: 100%;
   }
 }
 
@@ -126,5 +143,20 @@
     filter: blur(0px);
     opacity: 1;
     letter-spacing: 5px;
+  }
+}
+
+@keyframes IntroContainer {
+  0% {
+    opacity: 1;
+    transform: translateY(-10vh);
+  }
+  50% {
+    opacity: 0.5;
+    transform: translateY(-50vh);
+  }
+  100% {
+    opacity: 0;
+    transform: translateY(-100vh);
   }
 }

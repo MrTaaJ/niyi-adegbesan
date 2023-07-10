@@ -1,0 +1,11 @@
+.container {
+  width: 100%;
+  padding-inline: 5%;
+
+  // SCREENS 1400px and LARGER
+  @media only screen and (min-width: 1440px) {
+    width: 100%;
+    max-width: 90rem;
+    margin: auto;
+  }
+}

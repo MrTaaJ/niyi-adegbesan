@@ -25,17 +25,14 @@ h6 {
 }
 
 h1 {
-  // font-size: min(5vw - fn.rem(16), fn.rem(40));
   font-size: clamp(fn.rem(28), fn.rem(16) + 2vw, fn.rem(56));
 }
 
 h2 {
-  // font-size: min(4vw - fn.rem(16), fn.rem(32));
   font-size: clamp(fn.rem(22), fn.rem(14) + 1.5vw, fn.rem(48));
 }
 
 h3 {
-  // font-size: min(3vw - fn.rem(16), fn.rem(24));
   font-size: clamp(fn.rem(22), fn.rem(14) + 1.5vw, fn.rem(40));
 }
 

@@ -1,3 +1,5 @@
+//REACT DEFAULT
+
 //STYLES
 import styles from './Intro.module.scss'
 
