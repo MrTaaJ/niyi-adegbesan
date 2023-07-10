@@ -1,0 +1,272 @@
+@use '../../scss/global/colors' as colors;
+@use '../../scss/utils/functions' as fn;
+@import '../../scss/utils/mixins';
+@import '../../scss/utils/breakpoints';
+
+.lightText {
+  color: colors.$text-color-light;
+}
+
+.darkText {
+  color: colors.$text-color-dark;
+}
+
+.homeHeroContainer {
+  @include flex_centered;
+  @include flex_column;
+
+  .avatarContainer {
+    @include flex_centered;
+    width: fn.rem(135);
+    height: fn.rem(135);
+    border-radius: 50%;
+  }
+
+  .dark {
+    border: solid fn.rem(2) colors.$light-bg;
+  }
+  .light {
+    border: solid fn.rem(2) colors.$dark-bg;
+  }
+
+  .homeHeroTop {
+    @include flex_centered;
+    @include flex_column;
+    text-align: center;
+
+    .homeHeroIntro {
+      font-family: 'Lora';
+    }
+
+    .talentIconContainer {
+      @include flex;
+      gap: fn.rem(12);
+    }
+
+    .homeHeroDescription {
+      margin-block: fn.rem(30);
+    }
+
+    .myStory {
+      @include flex;
+      gap: fn.rem(10);
+      border-radius: fn.rem(4);
+      background-color: colors.$yellow;
+      padding-block: fn.rem(5);
+      padding-inline: fn.rem(10);
+
+      p {
+        color: #000000;
+      }
+    }
+
+    .myPassionContainer {
+      @include flex_centered;
+      width: 100%;
+      position: relative;
+      margin-block: fn.rem(70);
+      padding: fn.rem(30);
+
+      .myPassion {
+        @include flex_centered;
+        width: 100%;
+        position: absolute;
+        margin: auto auto;
+        top: -5px;
+
+        .myPassionInner {
+          width: fn.rem(650);
+          height: fn.rem(140);
+          position: relative;
+          overflow: hidden;
+          white-space: nowrap;
+          text-transform: uppercase;
+
+          div {
+            position: absolute;
+            p {
+              -webkit-text-stroke: 2px rgba(87, 87, 87, 0.3);
+              color: transparent;
+              font-family: 'Cairo';
+              font-size: fn.rem(56);
+              font-weight: 800;
+              margin-block: 0 0;
+              padding-block: 0 0;
+              overflow: hidden;
+              white-space: nowrap;
+              transform: translateX(-310px);
+              animation: MyPassion 15s ease-in-out infinite;
+            }
+          }
+        }
+      }
+
+      .myPassionOuter {
+        @include flex;
+        gap: fn.rem(5);
+        width: fn.rem(350);
+        z-index: 1;
+        font-family: 'Cairo';
+        font-size: fn.rem(16);
+
+        .myPassionAnimateCon {
+          @include flex_column;
+          height: fn.rem(25);
+          overflow: hidden;
+          text-align: left;
+
+          .myPassionAnimate {
+            height: 100%;
+            animation: MyPassionAnimate 10s ease-in-out infinite;
+          }
+        }
+      }
+    }
+  }
+
+  .circle {
+    @include flex_centered;
+    position: relative;
+    width: fn.rem(250);
+    height: fn.rem(250);
+    border-radius: 50%;
+
+    .circleLogo {
+      @include flex_centered;
+      position: absolute;
+      width: fn.rem(200);
+      height: fn.rem(200);
+      border-radius: 50%;
+      border: solid fn.rem(4) rgba(119, 119, 119, 1);
+
+      .circleLogoInner {
+        @include flex_centered;
+        position: relative;
+        .rotatingArrow {
+          transform: scale(2.5);
+          animation: shaker 10s linear infinite;
+        }
+
+        .blink {
+          position: absolute;
+          height: 31px;
+          width: 31px;
+          border-radius: 50%;
+          border: solid fn.rem(10) rgba(119, 119, 119, 1);
+          animation: blinker 10s linear infinite;
+        }
+      }
+    }
+
+    .circleText {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      color: rgba(119, 119, 119, 1);
+      animation: rotateText 5s linear infinite;
+
+      .circleInnerText {
+        position: absolute;
+        left: 50%;
+        font-size: 1rem;
+        transform-origin: 0 125px;
+      }
+    }
+  }
+}
+
+@keyframes MyPassion {
+  0% {
+    transform: translateX(-310px);
+  }
+  25% {
+    transform: translateX(-330px);
+  }
+  50% {
+    transform: translateX(10px);
+  }
+  75% {
+    transform: translateX(-330px);
+  }
+  100% {
+    transform: translateX(-310px);
+  }
+}
+
+@keyframes MyPassionAnimate {
+  0% {
+    transform: translateY(50%);
+  }
+  20% {
+    transform: translateY(0%);
+  }
+  40% {
+    transform: translateY(-100%);
+  }
+  60% {
+    transform: translateY(-200%);
+  }
+  80% {
+    transform: translateY(-300%);
+  }
+  100% {
+    transform: translateY(-400%);
+  }
+}
+
+@keyframes rotateText {
+  0% {
+    transform: rotate(0deg);
+  }
+  20% {
+    transform: rotate(15deg);
+  }
+  40% {
+    transform: rotate(0deg);
+  }
+  60% {
+    transform: rotate(120deg);
+  }
+  80% {
+    transform: rotate(240deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes blinker {
+  0% {
+    border: solid fn.rem(10) rgba(119, 119, 119, 1);
+  }
+  20% {
+    border: solid fn.rem(10) #ffffff;
+  }
+  50% {
+    border: solid fn.rem(10) rgba(119, 119, 119, 1);
+  }
+  100% {
+    border: solid fn.rem(10) rgba(119, 119, 119, 1);
+  }
+}
+
+@keyframes shaker {
+  0% {
+    transform: rotate(0deg) scale(2.5);
+  }
+  10% {
+    transform: rotate(10deg) scale(2.5);
+  }
+  30% {
+    transform: rotate(-90deg) scale(2.5);
+  }
+  40% {
+    transform: rotate(-45deg) scale(2.5);
+  }
+  50% {
+    transform: rotate(0deg) scale(2.5);
+  }
+  100% {
+    transform: rotate(0deg) scale(2.5);
+  }
+}

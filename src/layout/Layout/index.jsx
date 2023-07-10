@@ -22,7 +22,7 @@ const Layout = ({ title, description, children }) => {
 
       <main className={`${styles.main} ${light ? styles.light : styles.dark}`}>
         <NavBar />
-        <button onClick={() => setLight(!light)}></button>
+        <button onClick={() => setLight(!light)}>click</button>
         {children}
         {/* <Footer /> */}
       </main>
