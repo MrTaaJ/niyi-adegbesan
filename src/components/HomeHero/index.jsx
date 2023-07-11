@@ -93,7 +93,7 @@ function HomeHero() {
           </div>
         </div>
 
-        <CircleAnimation />
+        <AnimationCircle />
       </div>
     </Container>
   )
@@ -101,7 +101,7 @@ function HomeHero() {
 
 export default HomeHero
 
-const CircleAnimation = () => {
+export const AnimationCircle = () => {
   const circleTexts = 'How I made the magic you called design'.split('')
   return (
     <div className={styles.circle}>

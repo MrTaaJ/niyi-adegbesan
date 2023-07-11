@@ -13,24 +13,25 @@
 
 .projectsContainer {
   margin-block-start: fn.rem(40);
-  .projectsTitleContainer {
-    .projectsTitleSmall,
-    .projectsTitle {
-      text-transform: uppercase;
-    }
-    .projectsTitleSmall {
-      font-size: clamp(fn.rem(12), fn.rem(12) + 1vw, fn.rem(18));
-      line-height: clamp(fn.rem(16), fn.rem(12) + 1vw, fn.rem(24));
-      margin-block: 0 0;
-    }
-    .projectsTitle {
-      font-family: 'Cairo';
-      font-size: clamp(fn.rem(44), fn.rem(24) + 5vw, fn.rem(156));
-      font-weight: 900;
-      line-height: clamp(fn.rem(57), fn.rem(32) + 5vw, fn.rem(203));
-      color: rgba(119, 119, 119, 1);
-      margin-block: 0 0;
-    }
+}
+
+.projectsTitleContainer {
+  .projectsTitleSmall,
+  .projectsTitle {
+    text-transform: uppercase;
+  }
+  .projectsTitleSmall {
+    font-size: clamp(fn.rem(12), fn.rem(12) + 1vw, fn.rem(18));
+    line-height: clamp(fn.rem(16), fn.rem(12) + 1vw, fn.rem(24));
+    margin-block: 0 0;
+  }
+  .projectsTitle {
+    font-family: 'Cairo';
+    font-size: clamp(fn.rem(44), fn.rem(24) + 5vw, fn.rem(156));
+    font-weight: 900;
+    line-height: clamp(fn.rem(57), fn.rem(32) + 5vw, fn.rem(203));
+    color: rgba(119, 119, 119, 1);
+    margin-block: 0 0;
   }
 }
 
@@ -72,7 +73,7 @@
   }
   .cardBtnContainer {
     @include flex_column;
-    align-items: start;
+    align-items: flex-start;
     padding-inline: 5%;
 
     .cardBtn {

@@ -165,7 +165,7 @@
       position: relative;
       .rotatingArrow {
         transform: scale(2.5);
-        animation: shaker 10s linear infinite;
+        animation: shaker 8s linear infinite;
       }
 
       .blink {
@@ -262,6 +262,12 @@
   20% {
     border: solid fn.rem(10) #ffffff;
   }
+  30% {
+    border: solid fn.rem(10) #ffffff;
+  }
+  40% {
+    border: solid fn.rem(10) #ffffff;
+  }
   50% {
     border: solid fn.rem(10) rgba(119, 119, 119, 1);
   }
@@ -280,10 +286,20 @@
   30% {
     transform: rotate(-90deg) scale(2.5);
   }
-  40% {
-    transform: rotate(-45deg) scale(2.5);
+  32% {
+    transform: rotate(-90deg) scale(2.5);
   }
-  50% {
+  34% {
+    transform: rotate(-94deg) scale(2.5);
+  }
+  38% {
+    transform: rotate(-90deg) scale(2.5);
+  }
+  40% {
+    transform: rotate(-90deg) scale(2.5);
+  }
+
+  60% {
     transform: rotate(0deg) scale(2.5);
   }
   100% {

@@ -1,0 +1,200 @@
+@use '../../scss/global/colors' as colors;
+@use '../../scss/utils/functions' as fn;
+@import '../../scss/utils/mixins';
+@import '../../scss/utils/breakpoints';
+
+.lightText {
+  color: colors.$text-light;
+}
+
+.darkText {
+  color: colors.$text-dark;
+}
+
+.processContainer {
+  @include flex_column;
+  margin-block: fn.rem(50);
+
+  .animateCircle {
+    @include flex_centered;
+
+    @include breakpoint-up(lg) {
+      display: none;
+    }
+  }
+
+  .designProcess {
+    @include flex;
+    @include flex_centered;
+    gap: fn.rem(30);
+
+    .processBrain {
+      @include flex_column;
+      gap: fn.rem(30);
+      position: relative;
+      margin-block-start: fn.rem(80);
+
+      .ideaListsContainer {
+        @include flex_column;
+        margin-block-start: fn.rem(30);
+        gap: fn.rem(50);
+        z-index: 1;
+
+        .ideaLists {
+          @include flex;
+          gap: fn.rem(15);
+
+          .ideaDotOuter {
+            @include flex_centered;
+            width: fn.rem(40);
+            height: fn.rem(40);
+            border-radius: 50%;
+
+            .ideaDot {
+              width: fn.rem(36);
+              height: fn.rem(36);
+              border-radius: 50%;
+            }
+          }
+
+          .ideaList {
+            @include flex_centered;
+            gap: fn.rem(10);
+
+            .ideaSmallDot {
+              width: fn.rem(5);
+              height: fn.rem(5);
+              border-radius: 50%;
+            }
+          }
+        }
+      }
+
+      .brainBot {
+        transform: translateX(10px);
+      }
+
+      .ideaStick {
+        position: absolute;
+        width: fn.rem(2);
+        height: fn.rem(530);
+        top: fn.rem(50);
+        left: fn.rem(20);
+      }
+    }
+  }
+
+  .animateCircleTwo {
+    display: none;
+
+    @include breakpoint-up(lg) {
+      display: block;
+    }
+  }
+}
+
+.activeCon {
+  svg {
+    g {
+      animation: brain 3s ease-in-out;
+      animation-delay: 15s;
+    }
+  }
+}
+
+.brainDark {
+  svg {
+    transform: scale(2);
+    g {
+      g {
+        path {
+          fill: #ffffff;
+        }
+      }
+    }
+  }
+  .ideaListsContainer {
+    .ideaLists {
+      opacity: 0.5;
+      .ideaDotOuter {
+        background-color: #ffffff;
+        .ideaDot {
+          border: solid fn.rem(3) colors.$dark-bg;
+        }
+      }
+
+      .ideaList {
+        .ideaSmallDot {
+          background-color: #ffffff;
+        }
+      }
+    }
+  }
+
+  .ideaStick {
+    background-color: #ffffff;
+    opacity: 0.4;
+  }
+}
+
+.brainLight {
+  svg {
+    transform: scale(2);
+    g {
+      g {
+        path {
+          fill: #000000;
+        }
+      }
+    }
+  }
+  .ideaListsContainer {
+    .ideaLists {
+      opacity: 0.5;
+      .ideaDotOuter {
+        background-color: #000000;
+        .ideaDot {
+          border: solid fn.rem(3) colors.$light-bg;
+        }
+      }
+      .ideaList {
+        .ideaSmallDot {
+          background-color: #000000;
+        }
+      }
+    }
+  }
+
+  .ideaStick {
+    background-color: #000000;
+    opacity: 0.4;
+  }
+}
+
+.active {
+  @for $i from 1 through 5 {
+    &:nth-child(#{$i}) {
+      opacity: 0.5;
+      animation: brain 3s ease-in-out;
+      animation-delay: 3s * ($i - 1);
+    }
+  }
+}
+
+@keyframes brain {
+  0% {
+    opacity: 0.5;
+  }
+  25% {
+    opacity: 0.4;
+  }
+  50% {
+    opacity: 1;
+  }
+  75% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0.5;
+  }
+}

@@ -2,6 +2,7 @@
 import { useContext } from 'react'
 import { ThemeContext } from '../../contexts/ThemeContext'
 import { Link } from 'react-router-dom'
+import { PropTypes } from 'prop-types'
 
 //COMPONENTS
 import Container from '../../layout/Container'
@@ -11,21 +12,10 @@ import { AiOutlineRight } from 'react-icons/ai'
 import styles from './HomeProjects.module.scss'
 
 function HomeProjects() {
-  const { light } = useContext(ThemeContext)
-
   return (
     <div className={styles.projectsContainer}>
       <Container>
-        <div className={styles.projectsTitleContainer}>
-          <h3
-            className={`${styles.projectsTitleSmall} ${
-              light ? styles.lightText : styles.darkText
-            }`}
-          >
-            Selected Projects
-          </h3>
-          <h1 className={styles.projectsTitle}>My Projects</h1>
-        </div>
+        <Title smallTitle='Selected Projects' title='My Projects' />
       </Container>
 
       <ProjectCard />
@@ -34,6 +24,27 @@ function HomeProjects() {
 }
 
 export default HomeProjects
+
+export const Title = ({ smallTitle, title }) => {
+  const { light } = useContext(ThemeContext)
+  return (
+    <div className={styles.projectsTitleContainer}>
+      <h3
+        className={`${styles.projectsTitleSmall} ${
+          light ? styles.lightText : styles.darkText
+        }`}
+      >
+        {smallTitle}
+      </h3>
+      <h1 className={styles.projectsTitle}>{title}</h1>
+    </div>
+  )
+}
+
+Title.propTypes = {
+  title: PropTypes.string.isRequired,
+  smallTitle: PropTypes.string,
+}
 
 export const ProjectCard = () => {
   const { light } = useContext(ThemeContext)
