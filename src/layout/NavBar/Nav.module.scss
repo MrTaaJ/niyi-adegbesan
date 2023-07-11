@@ -3,6 +3,12 @@
 @import '../../scss/utils/mixins';
 @import '../../scss/utils/breakpoints';
 
+.navMainContainer {
+  position: sticky;
+  top: 0px;
+  // left: 20px;
+}
+
 .navContainer {
   @include flex;
   @include flex_justifyBetween;

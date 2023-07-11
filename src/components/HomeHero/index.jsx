@@ -1,5 +1,5 @@
 //REACT DEFAULT
-import { useContext, useEffect, useState } from 'react'
+import { useContext } from 'react'
 import { ThemeContext } from '../../contexts/ThemeContext'
 import { Link } from 'react-router-dom'
 
@@ -30,8 +30,6 @@ function HomeHero() {
     framerIcon,
   ]
 
-  const circleTexts = 'How I made the magic you called design'.split('')
-
   return (
     <Container>
       <div className={styles.homeHeroContainer}>
@@ -59,7 +57,7 @@ function HomeHero() {
 
           <p
             className={`${styles.homeHeroDescription} ${
-              light ? styles.lightText : styles.darkTest
+              light ? styles.lightText : styles.darkText
             }`}
           >
             Product designer based in Lagos, Nigeria. Currently designing
@@ -68,7 +66,7 @@ function HomeHero() {
 
           <Link to={'/about'} className={styles.myStory}>
             <p>My Story</p>
-            <img className={styles.avatar} src={sendIcon} alt='myStory' />
+            <img className={styles.sendIcon} src={sendIcon} alt='myStory' />
           </Link>
 
           <div className={styles.myPassionContainer}>
@@ -81,7 +79,7 @@ function HomeHero() {
             </div>
             <div
               className={`${styles.myPassionOuter} ${
-                light ? styles.lightText : styles.darkTest
+                light ? styles.lightText : styles.darkText
               }`}
             >
               <p>I am passionate about </p>
@@ -95,33 +93,40 @@ function HomeHero() {
           </div>
         </div>
 
-        <div className={styles.circle}>
-          <div className={styles.circleLogo}>
-            <div className={styles.circleLogoInner}>
-              <img
-                className={styles.rotatingArrow}
-                src={rotatingArrow}
-                alt='rotatingArrow'
-              />
-              <div className={styles.blink}></div>
-            </div>
-          </div>
-          <div className={`${styles.circleText}`}>
-            {circleTexts.map((text, index) => (
-              <span
-                style={{ transform: `rotate(${index * 9.3}deg)` }}
-                key={index}
-                className={styles.circleInnerText}
-              >
-                {text}
-              </span>
-            ))}
-            <p></p>
-          </div>
-        </div>
+        <CircleAnimation />
       </div>
     </Container>
   )
 }
 
 export default HomeHero
+
+const CircleAnimation = () => {
+  const circleTexts = 'How I made the magic you called design'.split('')
+  return (
+    <div className={styles.circle}>
+      <div className={styles.circleLogo}>
+        <div className={styles.circleLogoInner}>
+          <img
+            className={styles.rotatingArrow}
+            src={rotatingArrow}
+            alt='rotatingArrow'
+          />
+          <div className={styles.blink}></div>
+        </div>
+      </div>
+      <div className={`${styles.circleText}`}>
+        {circleTexts.map((text, index) => (
+          <span
+            style={{ transform: `rotate(${index * 9.3}deg)` }}
+            key={index}
+            className={styles.circleInnerText}
+          >
+            {text}
+          </span>
+        ))}
+        <p></p>
+      </div>
+    </div>
+  )
+}

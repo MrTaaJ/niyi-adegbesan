@@ -25,33 +25,34 @@ function NavBar() {
   }, [size])
 
   return (
-    <Container>
-      <div className={styles.navContainer}>
-        <Link to={'/'} className={styles.logoContainer}>
-          {size <= 768 ? (
-            <img
-              className={styles.navLogo}
-              src={light ? mobileLightLogo : mobileLogo}
-              alt='logo'
-            />
-          ) : (
-            <img
-              className={styles.navLogo}
-              src={light ? lightLogo : Logo}
-              alt='logo'
-            />
-          )}
-          <p className={styles.logoTitle}>Niyi Adegbesan</p>
-        </Link>
-        <div className={styles.desktopNavLink}>
-          <Link to={'/projects'} className={styles.navLink}>
-            Projects
+    <div className={styles.navMainContainer}>
+      <Container>
+        <div className={styles.navContainer}>
+          <Link to={'/'} className={styles.logoContainer}>
+            {size <= 768 ? (
+              <img
+                className={styles.navLogo}
+                src={light ? mobileLightLogo : mobileLogo}
+                alt='logo'
+              />
+            ) : (
+              <img
+                className={styles.navLogo}
+                src={light ? lightLogo : Logo}
+                alt='logo'
+              />
+            )}
+            <p className={styles.logoTitle}>Niyi Adegbesan</p>
           </Link>
-          <Link to={'/about'} className={styles.navLink}>
-            About me
-          </Link>
-        </div>
-        {/* {size <= 768 ? (
+          <div className={styles.desktopNavLink}>
+            <Link to={'/projects'} className={styles.navLink}>
+              Projects
+            </Link>
+            <Link to={'/about'} className={styles.navLink}>
+              About me
+            </Link>
+          </div>
+          {/* {size <= 768 ? (
         <Link to={link} className={styles.navLink}>
           {title}
           </Link>
@@ -65,8 +66,9 @@ function NavBar() {
         </Link>
         </div>
       )} */}
-      </div>
-    </Container>
+        </div>
+      </Container>
+    </div>
   )
 }
 

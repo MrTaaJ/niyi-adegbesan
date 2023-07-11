@@ -1,0 +1,135 @@
+@use '../../scss/global/colors' as colors;
+@use '../../scss/utils/functions' as fn;
+@import '../../scss/utils/mixins';
+@import '../../scss/utils/breakpoints';
+
+.lightText {
+  color: colors.$text-light;
+}
+
+.darkText {
+  color: colors.$text-dark;
+}
+
+.projectsContainer {
+  margin-block-start: fn.rem(40);
+  .projectsTitleContainer {
+    .projectsTitleSmall,
+    .projectsTitle {
+      text-transform: uppercase;
+    }
+    .projectsTitleSmall {
+      font-size: clamp(fn.rem(12), fn.rem(12) + 1vw, fn.rem(18));
+      line-height: clamp(fn.rem(16), fn.rem(12) + 1vw, fn.rem(24));
+      margin-block: 0 0;
+    }
+    .projectsTitle {
+      font-family: 'Cairo';
+      font-size: clamp(fn.rem(44), fn.rem(24) + 5vw, fn.rem(156));
+      font-weight: 900;
+      line-height: clamp(fn.rem(57), fn.rem(32) + 5vw, fn.rem(203));
+      color: rgba(119, 119, 119, 1);
+      margin-block: 0 0;
+    }
+  }
+}
+
+.cardContainer {
+  width: 100%;
+  @include flex_column;
+  gap: fn.rem(15);
+
+  .cardNumber {
+    font-size: clamp(fn.rem(24), fn.rem(16) + 1vw, fn.rem(44));
+    font-weight: 500;
+    font-family: 'Oswald';
+    text-align: left;
+    color: rgba(119, 119, 119, 1);
+    width: 100%;
+    padding-inline: 5%;
+    margin-block: fn.rem(30) 0;
+  }
+
+  .cardImageContainer {
+    width: 100%;
+  }
+
+  .cardDescriptionCon {
+    padding-inline: 5%;
+
+    .cardTitle {
+      font-size: clamp(fn.rem(24), fn.rem(16) + 1vw, fn.rem(40));
+      line-height: clamp(fn.rem(36), fn.rem(22) + 2vw, fn.rem(60));
+      font-weight: 500;
+      font-family: 'Patua One';
+    }
+
+    .cardDescription {
+      font-size: clamp(fn.rem(14), fn.rem(16) + 1vw, fn.rem(16));
+      line-height: clamp(fn.rem(18), fn.rem(12) + 1.2vw, fn.rem(20));
+      font-weight: 500;
+    }
+  }
+  .cardBtnContainer {
+    @include flex_column;
+    align-items: start;
+    padding-inline: 5%;
+
+    .cardBtn {
+      @include flex_centered;
+      gap: fn.rem(5);
+
+      p {
+        text-underline-offset: 4px;
+        text-decoration-line: underline;
+        text-decoration-thickness: 2px;
+      }
+
+      .arrowCon {
+        @include flex_centered;
+        width: fn.rem(20);
+        height: fn.rem(20);
+        border-radius: 50%;
+        transition: all 0.3s ease-in-out;
+      }
+
+      &:hover {
+        p {
+          text-decoration-thickness: 4px;
+          animation: lineThickness 0.2s linear 0s;
+        }
+        .arrowCon {
+          transform: translateX(5px);
+        }
+      }
+    }
+  }
+}
+
+.cardBtnLight {
+  .arrowCon {
+    color: colors.$text-dark;
+    background-color: colors.$dark-bg;
+  }
+}
+
+.cardBtnDark {
+  .arrowCon {
+    color: colors.$text-light;
+    background-color: colors.$light-bg;
+  }
+}
+
+@keyframes lineThickness {
+  0% {
+    text-decoration-thickness: 0;
+  }
+
+  50% {
+    text-decoration-thickness: 2px;
+  }
+
+  100% {
+    text-decoration-thickness: 4px;
+  }
+}
