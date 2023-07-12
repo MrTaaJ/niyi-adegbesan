@@ -1,18 +1,25 @@
 //REACT DEFAULT
 import { useContext, useEffect, useState } from 'react'
 import { ThemeContext } from '../../contexts/ThemeContext'
-// import { Link } from 'react-router-dom'
 
 //COMPONENTS
 import Container from '../../layout/Container'
 import { Title } from '../HomeProjects'
 import { AnimationCircle } from '../HomeHero'
-// import { AiOutlineRight } from 'react-icons/ai'
 
 //STYLES
 import styles from './HomeProcess.module.scss'
 import { ReactComponent as BrainBot } from '../../assets/Process/brainBot.svg'
-// import BrainBot from '../../assets/Process/brainBot.svg'
+import {
+  isqoreDark,
+  isqoreLight,
+  radicalDark,
+  radicalLight,
+  vendyDark,
+  vendyLight,
+  paysmosmo,
+  zuri,
+} from '../../assets/Client'
 
 function HomeProcess() {
   const { light } = useContext(ThemeContext)
@@ -36,7 +43,9 @@ function HomeProcess() {
         <div className={styles.animateCircle}>
           <AnimationCircle />
         </div>
+
         <Title smallTitle='My Design Process' title='My Process' />
+
         <div className={`${styles.designProcess}`}>
           <div
             className={`${styles.processBrain} ${
@@ -167,8 +176,54 @@ function HomeProcess() {
           </div>
         </div>
       </div>
+
+      <HomeClient />
     </Container>
   )
 }
 
 export default HomeProcess
+
+const HomeClient = () => {
+  const { light } = useContext(ThemeContext)
+  const clients = [
+    {
+      name: 'radicalX',
+      imgLight: radicalLight,
+      imgDark: radicalDark,
+    },
+    {
+      name: 'paysmosmo',
+      imgLight: paysmosmo,
+      imgDark: paysmosmo,
+    },
+    {
+      name: 'zuri',
+      imgLight: zuri,
+      imgDark: zuri,
+    },
+    {
+      name: 'isqore',
+      imgLight: isqoreLight,
+      imgDark: isqoreDark,
+    },
+    {
+      name: 'vendy',
+      imgLight: vendyLight,
+      imgDark: vendyDark,
+    },
+  ]
+  return (
+    <div className={styles.clientContainer}>
+      <Title smallTitle='Some of my Clients' title='My Clients' />
+
+      <div className={styles.clients}>
+        {clients.map((data, index) => (
+          <div key={index} className={styles.client}>
+            <img src={light ? data.imgLight : data.imgDark} alt={data.name} />
+          </div>
+        ))}
+      </div>
+    </div>
+  )
+}

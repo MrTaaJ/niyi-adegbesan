@@ -13,7 +13,7 @@
 
 .processContainer {
   @include flex_column;
-  margin-block: fn.rem(50);
+  margin-block: fn.rem(100) fn.rem(50);
 
   .animateCircle {
     @include flex_centered;
@@ -42,7 +42,11 @@
 
         .ideaLists {
           @include flex;
-          gap: fn.rem(15);
+          gap: fn.rem(10);
+
+          @include breakpoint-up(md) {
+            gap: fn.rem(15);
+          }
 
           .ideaDotOuter {
             @include flex_centered;
@@ -59,7 +63,15 @@
 
           .ideaList {
             @include flex_centered;
-            gap: fn.rem(10);
+            gap: fn.rem(5);
+
+            p {
+              font-size: clamp(fn.rem(16), fn.rem(10) + 0.5vw, fn.rem(18));
+            }
+
+            @include breakpoint-up(md) {
+              gap: fn.rem(10);
+            }
 
             .ideaSmallDot {
               width: fn.rem(5);
@@ -76,8 +88,8 @@
 
       .ideaStick {
         position: absolute;
-        width: fn.rem(2);
-        height: fn.rem(530);
+        width: fn.rem(1);
+        height: fn.rem(540);
         top: fn.rem(50);
         left: fn.rem(20);
       }
@@ -196,5 +208,34 @@
   }
   100% {
     opacity: 0.5;
+  }
+}
+
+//CLIENT
+.clientContainer {
+  @include flex_column;
+  margin-block: fn.rem(100) fn.rem(50);
+
+  .clients {
+    @include flex;
+    gap: fn.rem(30);
+    margin-block: fn.rem(50);
+    width: 100%;
+
+    .client {
+      @include flex_centered;
+      width: 100%;
+
+      img {
+        width: 80%;
+        background-position: center center;
+        background-size: cover;
+        background-repeat: no-repeat;
+      }
+
+      &:nth-child(3) {
+        width: 60%;
+      }
+    }
   }
 }

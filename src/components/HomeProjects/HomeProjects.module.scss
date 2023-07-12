@@ -13,6 +13,12 @@
 
 .projectsContainer {
   margin-block-start: fn.rem(40);
+
+  .cardsContainer {
+    @include flex_column;
+    gap: fn.rem(100);
+    margin-block-start: fn.rem(50);
+  }
 }
 
 .projectsTitleContainer {
@@ -40,67 +46,107 @@
   @include flex_column;
   gap: fn.rem(15);
 
+  @include breakpoint-up(lg) {
+    @include flex;
+    align-items: center;
+    gap: fn.rem(50);
+  }
+  @include breakpoint-up(xxl) {
+    padding-inline: 5%;
+    width: 100%;
+    max-width: 90rem;
+    margin: auto;
+  }
+
+  .cardNumber,
+  .cardDescriptionBtnCon {
+    padding-inline: 5%;
+
+    @include breakpoint-up(xxl) {
+      padding-inline: 0;
+    }
+  }
+
   .cardNumber {
     font-size: clamp(fn.rem(24), fn.rem(16) + 1vw, fn.rem(44));
     font-weight: 500;
     font-family: 'Oswald';
     text-align: left;
     color: rgba(119, 119, 119, 1);
-    width: 100%;
-    padding-inline: 5%;
     margin-block: fn.rem(30) 0;
   }
 
   .cardImageContainer {
     width: 100%;
-  }
 
-  .cardDescriptionCon {
-    padding-inline: 5%;
-
-    .cardTitle {
-      font-size: clamp(fn.rem(24), fn.rem(16) + 1vw, fn.rem(40));
-      line-height: clamp(fn.rem(36), fn.rem(22) + 2vw, fn.rem(60));
-      font-weight: 500;
-      font-family: 'Patua One';
+    @include breakpoint-up(lg) {
+      width: 40%;
     }
 
-    .cardDescription {
-      font-size: clamp(fn.rem(14), fn.rem(16) + 1vw, fn.rem(16));
-      line-height: clamp(fn.rem(18), fn.rem(12) + 1.2vw, fn.rem(20));
-      font-weight: 500;
+    img {
+      width: 100%;
+      background-position: center center;
+      background-size: cover;
+      background-repeat: no-repeat;
     }
   }
-  .cardBtnContainer {
+
+  .cardDescriptionBtnCon {
     @include flex_column;
-    align-items: flex-start;
-    padding-inline: 5%;
 
-    .cardBtn {
-      @include flex_centered;
-      gap: fn.rem(5);
+    @include breakpoint-up(md) {
+      width: 50%;
+    }
 
-      p {
-        text-underline-offset: 4px;
-        text-decoration-line: underline;
-        text-decoration-thickness: 2px;
+    @include breakpoint-up(lg) {
+      width: 40%;
+    }
+
+    gap: fn.rem(15);
+    .cardDescriptionCon {
+      .cardTitle {
+        font-size: clamp(fn.rem(24), fn.rem(16) + 1vw, fn.rem(40));
+        line-height: clamp(fn.rem(36), fn.rem(22) + 2vw, fn.rem(60));
+        font-weight: 500;
+        font-family: 'Patua One';
       }
 
-      .arrowCon {
+      .cardDescription {
+        font-size: clamp(fn.rem(14), fn.rem(16) + 1vw, fn.rem(16));
+        line-height: clamp(fn.rem(18), fn.rem(12) + 1.2vw, fn.rem(20));
+        font-weight: 500;
+      }
+    }
+    .cardBtnContainer {
+      @include flex_column;
+      align-items: flex-start;
+
+      .cardBtn {
         @include flex_centered;
-        width: fn.rem(20);
-        height: fn.rem(20);
-        border-radius: 50%;
-        transition: all 0.3s ease-in-out;
-      }
+        gap: fn.rem(5);
 
-      &:hover {
         p {
-          text-decoration-thickness: 4px;
-          animation: lineThickness 0.2s linear 0s;
+          text-underline-offset: 4px;
+          text-decoration-line: underline;
+          text-decoration-thickness: 2px;
         }
+
         .arrowCon {
-          transform: translateX(5px);
+          @include flex_centered;
+          width: fn.rem(20);
+          height: fn.rem(20);
+          border-radius: 50%;
+          transition: all 0.3s ease-in-out;
+        }
+
+        &:hover {
+          p {
+            text-decoration-thickness: 4px;
+            animation: lineThickness 0.2s linear 0s;
+          }
+          .arrowCon {
+            transform: translateX(5px);
+          }
         }
       }
     }
