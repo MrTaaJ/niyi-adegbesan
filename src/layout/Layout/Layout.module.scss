@@ -7,3 +7,20 @@
   background-color: #000000;
   color: #ffffff;
 }
+
+.main {
+  position: relative;
+  .theme {
+    position: fixed;
+    bottom: 200px;
+    right: 15%;
+    cursor: pointer;
+    background: none;
+    outline: none;
+
+    // SCREENS 1400px and LARGER
+    @media only screen and (min-width: 768px) {
+      bottom: 40%;
+    }
+  }
+}

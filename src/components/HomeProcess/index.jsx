@@ -219,9 +219,11 @@ const HomeClient = () => {
 
       <div className={styles.clients}>
         {clients.map((data, index) => (
-          <div key={index} className={styles.client}>
-            <img src={light ? data.imgLight : data.imgDark} alt={data.name} />
-          </div>
+          <img
+            key={index}
+            src={light ? data.imgLight : data.imgDark}
+            alt={data.name}
+          />
         ))}
       </div>
     </div>

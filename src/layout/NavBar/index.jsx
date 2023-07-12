@@ -25,7 +25,7 @@ function NavBar() {
   }, [size])
 
   return (
-    <div className={styles.navMainContainer}>
+    <nav className={styles.navMainContainer}>
       <Container>
         <div className={styles.navContainer}>
           <Link to={'/'} className={styles.logoContainer}>
@@ -68,7 +68,7 @@ function NavBar() {
       )} */}
         </div>
       </Container>
-    </div>
+    </nav>
   )
 }
 

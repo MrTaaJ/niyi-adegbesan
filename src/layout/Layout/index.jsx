@@ -6,10 +6,12 @@ import { ThemeContext } from '../../contexts/ThemeContext'
 
 // // COMPONENTS
 import NavBar from '../NavBar'
-// import Footer from '../Footer'
+import Footer from '../Footer'
 
 // STYLES
 import styles from './Layout.module.scss'
+import darkLogo from '../../assets/darkLogo.svg'
+import lightLogo from '../../assets/lightLogo.svg'
 
 const Layout = ({ title, description, children }) => {
   const { light, setLight } = useContext(ThemeContext)
@@ -22,9 +24,11 @@ const Layout = ({ title, description, children }) => {
 
       <main className={`${styles.main} ${light ? styles.light : styles.dark}`}>
         <NavBar />
-        <button onClick={() => setLight(!light)}>click</button>
+        <button className={`${styles.theme}`} onClick={() => setLight(!light)}>
+          <img src={light ? lightLogo : darkLogo} alt='themeLogo' />
+        </button>
         {children}
-        {/* <Footer /> */}
+        <Footer />
       </main>
     </HelmetProvider>
   )

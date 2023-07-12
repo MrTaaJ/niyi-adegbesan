@@ -218,24 +218,15 @@
 
   .clients {
     @include flex;
+    flex-wrap: wrap;
     gap: fn.rem(30);
     margin-block: fn.rem(50);
     width: 100%;
 
-    .client {
-      @include flex_centered;
-      width: 100%;
-
-      img {
-        width: 80%;
-        background-position: center center;
-        background-size: cover;
-        background-repeat: no-repeat;
-      }
-
-      &:nth-child(3) {
-        width: 60%;
-      }
+    img {
+      background-position: center center;
+      background-size: cover;
+      background-repeat: no-repeat;
     }
   }
 }
