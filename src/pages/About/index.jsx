@@ -5,7 +5,7 @@
 //COMPONENTS
 import Layout from '../../layout/Layout'
 import AboutHero from '../../components/AboutHero'
-// import AboutProjects from '../../components/AboutProjects'
+import AboutMore from '../../components/AboutMore'
 // import AboutProcess from '../../components/AboutProcess'
 // import Container from '../../layout/Container'
 
@@ -18,7 +18,7 @@ function About() {
     <Layout title='My Story'>
       <div className={styles.aboutContainer}>
         <AboutHero />
-        {/* <AboutProjects /> */}
+        <AboutMore />
         {/* <AboutProcess /> */}
       </div>
     </Layout>

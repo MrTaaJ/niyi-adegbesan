@@ -1,0 +1,186 @@
+@use '../../scss/global/colors' as colors;
+@use '../../scss/utils/functions' as fn;
+@import '../../scss/utils/mixins';
+@import '../../scss/utils/breakpoints';
+
+.lightText {
+  color: colors.$text-light;
+
+  span {
+    color: rgba(221, 133, 0, 1);
+  }
+}
+
+.darkText {
+  color: colors.$text-dark;
+
+  span {
+    color: rgba(248, 209, 6, 1);
+  }
+}
+
+.aboutMoreContainer {
+  @include flex_column;
+  gap: fn.rem(50);
+
+  .moreContainer {
+    @include flex_column;
+    // gap: fn.rem(30);
+
+    .moreTitle {
+      font-family: 'Lora';
+      font-size: clamp(fn.rem(28), fn.rem(16) + 3vw, fn.rem(48));
+      line-height: clamp(fn.rem(42), fn.rem(24) + 5vw, fn.rem(72));
+      font-weight: 600;
+    }
+
+    .moreText {
+      @include flex_column;
+      gap: fn.rem(20);
+      font-size: clamp(fn.rem(14), fn.rem(12) + 1vw, fn.rem(16));
+      line-height: clamp(fn.rem(18), fn.rem(12) + 1.5vw, fn.rem(28));
+      font-weight: 500;
+
+      span {
+        font-weight: 600;
+      }
+    }
+  }
+}
+
+.aboutResumeContainer {
+  @include flex_column;
+  gap: fn.rem(50);
+
+  .yearsContainer {
+    @include flex_column;
+    @include flex_centered;
+    gap: fn.rem(20);
+
+    .yearsOfExperience {
+      @include flex_centered;
+      flex-flow: column nowrap;
+      justify-content: center;
+      align-items: center;
+      gap: fn.rem(20);
+      padding: fn.rem(50);
+      width: 364px;
+      height: 250px;
+    }
+
+    .darkBackground {
+      background-color: rgba(62, 64, 66, 1);
+    }
+
+    .lightBackground {
+      background-color: rgba(198, 198, 198, 1);
+    }
+
+    @include breakpoint-up(md) {
+      @include flex;
+      flex-wrap: wrap;
+    }
+  }
+
+  .experienceContainer {
+    @include flex_column;
+    align-items: center;
+    gap: fn.rem(30);
+
+    .downloadResume {
+      font-family: 'Manrope';
+      font-size: fn.rem(14);
+      font-weight: 600;
+      line-height: fn.rem(18);
+      letter-spacing: 0.04em;
+      padding-block: fn.rem(14);
+      padding-inline: fn.rem(100);
+      width: fit-content;
+      border-radius: fn.rem(100);
+      box-shadow: 0px 4px 8px 0px rgba(27, 26, 26, 0.36);
+    }
+
+    .downloadResumeLight {
+      background: linear-gradient(
+        180deg,
+        rgba(183, 185, 187, 0.8) 0%,
+        rgba(65, 67, 68, 0.4) 100%
+      );
+      color: rgba(7, 7, 7, 1);
+    }
+
+    .downloadResumeDark {
+      background: linear-gradient(
+        180deg,
+        rgba(62, 64, 66, 0.8) 0%,
+        rgba(62, 64, 66, 0.4) 100%
+      );
+      color: rgba(252, 253, 255, 1);
+    }
+  }
+
+  @include breakpoint-up(lg) {
+    @include flex;
+    flex-flow: row-reverse nowrap;
+    justify-content: space-between;
+    gap: fn.rem(50);
+  }
+}
+
+.resumeContainer {
+  @include flex_centered;
+  @include flex_column;
+
+  .resumeTitle {
+    font-size: clamp(fn.rem(14), fn.rem(12) + 1vw, fn.rem(16));
+    font-weight: 500;
+    line-height: clamp(fn.rem(18), fn.rem(12) + 1.5vw, fn.rem(28));
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    opacity: 0.4;
+  }
+  .resumeContentContainer {
+    @include flex_column;
+    gap: fn.rem(15);
+
+    .resumeContent {
+      @include flex;
+      align-items: center;
+      gap: fn.rem(30);
+      width: fn.rem(400);
+
+      .resumeYear {
+        font-family: 'Oswald';
+        font-size: clamp(fn.rem(24), fn.rem(12) + 1vw, fn.rem(16));
+        font-weight: 500;
+        line-height: clamp(fn.rem(31), fn.rem(12) + 1.5vw, fn.rem(28));
+        letter-spacing: 0.04em;
+        opacity: 0.4;
+      }
+
+      .resumePlaceContainer {
+        @include flex_column;
+        .company {
+          font-size: clamp(fn.rem(14), fn.rem(12) + 1vw, fn.rem(16));
+          font-weight: 600;
+          line-height: clamp(fn.rem(18), fn.rem(12) + 1.5vw, fn.rem(28));
+          opacity: 0.8;
+        }
+
+        .place {
+          font-size: clamp(fn.rem(12), fn.rem(12) + 1vw, fn.rem(16));
+          font-weight: 500;
+          line-height: clamp(fn.rem(16), fn.rem(12) + 1.5vw, fn.rem(28));
+          opacity: 0.6;
+        }
+      }
+    }
+  }
+}
+
+.lightResume {
+  color: rgba(50, 50, 50, 1);
+}
+.darkResume {
+  color: rgba(255, 255, 255, 1);
+}
