@@ -85,7 +85,10 @@
 
           .socials {
             .social {
-              margin-inline-end: fn.rem(20);
+              // margin-inline-end: fn.rem(20);
+              width: fn.rem(100);
+              text-align: left;
+              // margin-inline-end: fn.rem(20);
             }
           }
         }

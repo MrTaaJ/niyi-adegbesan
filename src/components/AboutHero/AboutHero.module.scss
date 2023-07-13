@@ -1,0 +1,35 @@
+@use '../../scss/global/colors' as colors;
+@use '../../scss/utils/functions' as fn;
+@import '../../scss/utils/mixins';
+@import '../../scss/utils/breakpoints';
+
+.aboutHeroContainer {
+  @include flex_column;
+  gap: fn.rem(70);
+
+  .profileCenter {
+    @include flex_centered;
+
+    .profileContainer {
+      @include flex_centered;
+      width: fn.rem(240);
+      height: fn.rem(240);
+      border-radius: 50%;
+    }
+
+    .dark {
+      border: solid fn.rem(2) colors.$light-bg;
+    }
+    .light {
+      border: solid fn.rem(2) colors.$dark-bg;
+    }
+  }
+
+  @include breakpoint-up(md) {
+    @include flex;
+    flex-flow: row-reverse nowrap;
+    align-items: center;
+    justify-content: space-around;
+    gap: fn.rem(50);
+  }
+}

@@ -10,15 +10,17 @@ import HomeProcess from '../../components/HomeProcess'
 // import Container from '../../layout/Container'
 
 //STYLES
-// import styles from './Home.module.scss'
+import styles from './Home.module.scss'
 
 function Home() {
   // const { light } = useContext(ThemeContext)
   return (
     <Layout title='Home'>
-      <HomeHero />
-      <HomeProjects />
-      <HomeProcess />
+      <div className={styles.homeContainer}>
+        <HomeHero />
+        <HomeProjects />
+        <HomeProcess />
+      </div>
     </Layout>
   )
 }

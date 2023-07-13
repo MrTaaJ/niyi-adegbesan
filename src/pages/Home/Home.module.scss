@@ -2,3 +2,7 @@
 @use '../../scss/utils/functions' as fn;
 @import '../../scss/utils/mixins';
 @import '../../scss/utils/breakpoints';
+
+.homeContainer {
+  margin-block-start: fn.rem(50);
+}
