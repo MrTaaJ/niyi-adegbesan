@@ -1,0 +1,129 @@
+@use '../../scss/global/colors' as colors;
+@use '../../scss/utils/functions' as fn;
+@import '../../scss/utils/mixins';
+@import '../../scss/utils/breakpoints';
+
+.lightText {
+  color: colors.$text-light;
+}
+
+.darkText {
+  color: colors.$text-dark;
+}
+
+.projectMainContainer {
+  @include flex_column;
+  gap: fn.rem(50);
+
+  .projectMainOverview {
+    @include flex_column;
+    gap: fn.rem(20);
+
+    .briefsCon {
+      @include flex_column;
+      gap: fn.rem(15);
+    }
+  }
+
+  .projectResearchCon,
+  .projectAuditCon,
+  .projectPrimaryCon {
+    @include flex_column;
+    gap: fn.rem(20);
+
+    .projectResearch {
+      @include flex_centered;
+      align-items: flex-start;
+      gap: fn.rem(30);
+      flex-wrap: wrap;
+    }
+
+    .projectAuditImage {
+      @include flex_centered;
+      width: 100%;
+
+      img {
+        width: 100%;
+        background-position: center center;
+        background-size: cover;
+        background-repeat: no-repeat;
+
+        @include breakpoint-up(md) {
+          width: 80%;
+        }
+      }
+    }
+
+    .projectPrimaryInsightful {
+      @include flex_centered;
+      @include flex_column;
+
+      .insightful {
+        font-family: 'Manrope';
+        font-size: clamp(fn.rem(16), fn.rem(12) + 1vw, fn.rem(20));
+        font-weight: 600;
+      }
+    }
+  }
+}
+
+.projectBackground {
+  font-family: 'Manrope';
+  font-size: clamp(fn.rem(20), fn.rem(12) + 2vw, fn.rem(24));
+  font-weight: 600;
+}
+
+.projectBriefContainer {
+  @include flex_column;
+  gap: fn.rem(0);
+
+  .projectBriefTitle {
+    font-size: clamp(fn.rem(16), fn.rem(10) + 1.5vw, fn.rem(18));
+    font-weight: 700;
+    opacity: 0.9;
+  }
+}
+
+.projectBriefSubtitle {
+  font-size: clamp(fn.rem(14), fn.rem(10) + 1vw, fn.rem(16));
+  line-height: clamp(fn.rem(20), fn.rem(14) + 1.5vw, fn.rem(24));
+  font-weight: 400;
+  opacity: 0.8;
+}
+
+.researchContainer {
+  @include flex_centered;
+  @include flex_column;
+  gap: fn.rem(10);
+
+  .researchImageContainer {
+    @include flex_centered;
+    position: relative;
+    padding: fn.rem(50);
+
+    img {
+      position: absolute;
+      //   top: fn.rem(0);
+    }
+
+    .researchDataTitle {
+      text-transform: uppercase;
+      font-size: clamp(fn.rem(12), fn.rem(8) + 1vw, fn.rem(14));
+      line-height: fn.rem(15);
+      font-weight: 700;
+      opacity: 0.8;
+    }
+  }
+
+  @include breakpoint-up(md) {
+    width: 45%;
+  }
+
+  @include breakpoint-up(lg) {
+    width: 30%;
+  }
+
+  @include breakpoint-up(xl) {
+    width: 22%;
+  }
+}

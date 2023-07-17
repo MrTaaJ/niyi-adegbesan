@@ -5,6 +5,7 @@ import ProjectHero from '../../components/ProjectHero'
 //STYLES
 import styles from './Reconnect.module.scss'
 import project02 from '../../assets/Project/project02.svg'
+import ProjectMain from '../../components/ProjectMain'
 
 export default function Reconnect() {
   const heroData = {
@@ -27,6 +28,7 @@ export default function Reconnect() {
     <Layout title='With-Me Reconnects'>
       <div className={styles.reconnectContainer}>
         <ProjectHero data={heroData} />
+        <ProjectMain />
       </div>
     </Layout>
   )
