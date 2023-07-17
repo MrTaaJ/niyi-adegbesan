@@ -35,7 +35,7 @@ function HomeProjects() {
         'Mobile app for travellers and trippers to reconnect with loved ones within proximity. With GPS enabled feature, easy to find friends and meet.',
       btnText: 'View Case study',
       img: project02,
-      link: '/',
+      link: '/reconnect',
     },
     {
       number: '03',
@@ -115,6 +115,7 @@ export const ProjectCard = ({ data }) => {
 
         <div className={styles.cardBtnContainer}>
           <Link
+            to={data.link}
             className={`${styles.cardBtn} ${
               light ? styles.cardBtnLight : styles.cardBtnDark
             }`}

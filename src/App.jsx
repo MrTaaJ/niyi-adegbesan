@@ -6,6 +6,7 @@ import { useEffect, useState } from 'react'
 import Intro from './pages/Intro'
 import Home from './pages/Home'
 import About from './pages/About'
+import Reconnect from './pages/Reconnect'
 
 function App() {
   const [display, setDisplay] = useState(true)
@@ -25,6 +26,7 @@ function App() {
           <Routes>
             <Route index element={<Home />} />
             <Route path='/about' element={<About />} />
+            <Route path='/reconnect' element={<Reconnect />} />
           </Routes>
         </BrowserRouter>
       )}
