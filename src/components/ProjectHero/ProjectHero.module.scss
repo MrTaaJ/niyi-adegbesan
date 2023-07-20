@@ -48,7 +48,7 @@
 
   .projectListContainer {
     @include flex_centered;
-    gap: fn.rem(20);
+    gap: fn.rem(15);
     margin-block-start: fn.rem(30);
 
     @include breakpoint-up(md) {
@@ -96,6 +96,7 @@
       border-bottom: 1px colors.$text-light solid;
       opacity: 0.6;
       padding-block: fn.rem(15);
+      gap: fn.rem(30);
     }
   }
 
@@ -105,6 +106,7 @@
       border-bottom: 1px colors.$text-dark solid;
       opacity: 0.6;
       padding-block: fn.rem(15);
+      gap: fn.rem(30);
     }
   }
   .projectHeroSubContainer {

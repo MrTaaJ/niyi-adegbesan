@@ -2,9 +2,11 @@
 import { useContext, useEffect, useState } from 'react'
 import { ThemeContext } from '../../contexts/ThemeContext'
 import PropTypes from 'prop-types'
+import { Link } from 'react-router-dom'
 
 //COMPONENTS
 import Container from '../../layout/Container'
+import { AiOutlineRight } from 'react-icons/ai'
 
 //STYLES
 import styles from './ProjectMain.module.scss'
@@ -12,13 +14,21 @@ import {
   auditDesktop,
   auditMobile,
   insightDesktop,
-  insightMobile,
   reconnectFlower,
   reconnectFlowerLight,
   researchAssumptions,
+  informationArchitectureImg,
+  userFlowImg,
+  wireframeImg,
+  theVisuals,
+  solutionUnlock,
+  solutionPeople,
+  solutionProfile,
+  solutionMeet,
 } from '../../assets/Project/Reconnect'
 
 export default function ProjectMain() {
+  const { light } = useContext(ThemeContext)
   const [size, setSize] = useState(window.innerWidth)
 
   useEffect(() => {
@@ -90,6 +100,104 @@ export default function ProjectMain() {
       'From the foundational assumption which formed the basis of my inference, I was able to create insights which formed the pivot of the proposed solution.',
   }
 
+  const solution = {
+    brief:
+      'To design a social app that helps people find friends and loved ones within proximity in realtime, I started off by creating information architecture and  further it with a user-flow to show a pictorial representation of how a user will navigate the app.',
+  }
+
+  const informationArchitecture = {
+    title: 'Information Architecture',
+    brief:
+      'Gathering all research findings and insight, I started off the design process by creating an information architecture of the solution. This part help me to break the feature into chunks and make it easy for user to understand the product.',
+  }
+
+  const userFlow = {
+    title: 'User FLow',
+    brief:
+      'I went on with designing a simple user flow describing actions a user would take and the screens they would encounter to complete a task, as a user navigates through, to ensure a more seamless and flexible user experience.',
+  }
+
+  const wireframe = {
+    brief:
+      'I realized with-me has the potential to connect people through a GPS powered system, I create a Lo-Fi prototype of a digital wireframe to show how users will interact with the solution and the experiences of it. My decisions during this phase were based on findings and assumptions gathered during the research phase.',
+  }
+
+  const visuals = {
+    brief:
+      'In this phase, I improved on the wireframe which represented my idea of what I wanted the solution to look like. one of the biggest challenge i had during this phase was a choice of color and typography that will best communicate the right emotion and feeling.  Eventually, after several trials, i arrived at what i felt was cool and would be a great fit for the app.',
+  }
+
+  const solutionCardData = [
+    {
+      number: '01',
+      title: 'User Authentication - Unlocking the vybe',
+      description:
+        'A 2-step verification process that allows user to very personal information to make the community safe.',
+      list: [
+        'Login for existing users',
+        'Sign up for new users',
+        'Personal information and personalizing experience',
+      ],
+      img: solutionUnlock,
+    },
+
+    {
+      number: '02',
+      title: 'Finding people around',
+      description:
+        'This part took me a lot of time to come by. I did a thorough research on the best metrics that can be used to determine user’s visibility. This feature allows user to create a presence in the community and becoming visible based on interest, location and contact strength.',
+      list: [
+        'Search friends around',
+        'Receive meet up request from friends around',
+        'See friends profile and interest',
+      ],
+      img: solutionPeople,
+    },
+
+    {
+      number: '03',
+      title: 'User Profile',
+      description:
+        'This feature allows user to personalize their experience on the app. Users get to set up the interest to determines their visibility to other users.',
+      list: [
+        'Complete set up',
+        'Manage gallery',
+        'Account and location settings',
+      ],
+      img: solutionProfile,
+    },
+
+    {
+      number: '04',
+      title: 'Meet up',
+      description:
+        'I made this natural and easy to use for friends. Get to chat up, call and plan a meetup. User also get to share pictures of both old memory and the new moments created.',
+      img: solutionMeet,
+    },
+  ]
+
+  const usabilityTest = [
+    {
+      brief:
+        'I tested the design with users across various demography using various testing methods and techniques to identify area of concerns and to make iteration on improving the user experience.',
+    },
+    {
+      brief:
+        'During this phase, I created a prioritization map to categorize users concerns into P0, P1, P3 & P4. In this current phase, P0 & P1 were considered in the improved screens to make up the current final design. Overtime, more reviews and tests would be carried out to continuously improve the usability strength of this solution.',
+    },
+  ]
+
+  const reflection = [
+    {
+      brief:
+        'Being a social enthusiast myself, working on with-me was incredibly rewarding. I got to experiment with some of the new Figma features, and narrowed down my design process. Although I was not able to fully flesh out some other features and designs I wanted within with-me due to a few constraints, it’s not to say I won’t try to incorporate them in future projects down the line.',
+    },
+    {
+      brief:
+        'I also got to have conversation with new folks, those I consider friends now. Feels good and I hope everyone gets to have an exciting moment with this magic I made for you all.',
+    },
+  ]
+
   return (
     <Container>
       <div className={styles.projectMainContainer}>
@@ -123,11 +231,7 @@ export default function ProjectMain() {
 
           <div className={styles.projectAuditImage}>
             {size <= 768 ? (
-              <img
-                className={styles.projectImg}
-                src={auditDesktop}
-                alt='logo'
-              />
+              <img className={styles.projectImg} src={auditMobile} alt='logo' />
             ) : (
               <img
                 className={styles.projectImg}
@@ -180,6 +284,97 @@ export default function ProjectMain() {
             />
           </div>
         </div>
+
+        {/* The Solution SECTION */}
+        <div className={styles.projectAuditCon}>
+          <ProjectBackgroundTitle title={'The Solution'} />
+
+          <ProjectBrief briefData={solution} />
+
+          <div className={styles.theSolutionCon}>
+            {/* Information Architecture */}
+            <div
+              className={`${styles.projectAuditCon} ${styles.architectureFlow}`}
+            >
+              <ProjectBrief briefData={informationArchitecture} />
+
+              <div className={`${styles.projectAuditImage} `}>
+                <img
+                  className={styles.projectImg}
+                  src={informationArchitectureImg}
+                  alt='logo'
+                />
+              </div>
+            </div>
+
+            {/* User Flow */}
+            <div
+              className={`${styles.projectAuditCon} ${styles.architectureFlow}`}
+            >
+              <ProjectBrief briefData={userFlow} />
+
+              <div className={`${styles.projectAuditImage}`}>
+                <img
+                  className={styles.projectImg}
+                  src={userFlowImg}
+                  alt='logo'
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+
+        {/* Wire frame SECTION */}
+        <div className={styles.projectAuditCon}>
+          <ProjectBackgroundTitle title={'Wireframe'} />
+
+          <ProjectBrief briefData={wireframe} />
+
+          <div
+            className={`${styles.projectAuditImage} ${
+              styles.architectureFlowImg
+            } ${light ? styles.lightImgBg : styles.darkImgBg}`}
+          >
+            <img className={styles.projectImg} src={wireframeImg} alt='logo' />
+          </div>
+        </div>
+
+        {/* The Visuals SECTION */}
+        <div className={styles.projectAuditCon}>
+          <ProjectBackgroundTitle title={'The Visuals'} />
+
+          <ProjectBrief briefData={visuals} />
+
+          <div className={styles.projectAuditImage}>
+            <img className={styles.projectImg} src={theVisuals} alt='logo' />
+          </div>
+        </div>
+
+        {/* The Visuals Card */}
+        <div className={styles.visualsCardCon}>
+          {solutionCardData.map((data, index) => (
+            <SolutionCard data={data} key={index} />
+          ))}
+        </div>
+        <div className={styles.usabilityReflection}>
+          <div className={styles.usability}>
+            <ProjectBackgroundTitle title={'Usability Test & Improvement'} />
+            {usabilityTest.map((data, index) => (
+              <ProjectBrief briefData={data} key={index} />
+            ))}
+          </div>
+
+          <div className={styles.reflection}>
+            <ProjectBackgroundTitle title={'Reflection!'} />
+            {reflection.map((data, index) => (
+              <ProjectBrief briefData={data} key={index} />
+            ))}
+          </div>
+        </div>
+
+        <NextProjectButton
+          data={{ link: '/danflight', btnText: 'Danflight Rider' }}
+        />
       </div>
     </Container>
   )
@@ -229,6 +424,59 @@ export function ProjectResearch({ researchData }) {
   )
 }
 
+export function SolutionCard({ data }) {
+  const { light } = useContext(ThemeContext)
+  const brief = {
+    title: data.title,
+    brief: data.description,
+  }
+  return (
+    <div className={styles.solutionCardContainer}>
+      <h3 className={styles.solutionCardNumber}>{data.number}</h3>
+      <ProjectBrief briefData={brief} />
+      {data.list && (
+        <div className={styles.solutionListsCon}>
+          {data.list.map((value, index) => {
+            return (
+              <div className={styles.solutionListCon} key={index}>
+                <div
+                  className={`${styles.solutionListDot} ${
+                    light ? styles.lightDot : styles.darkDot
+                  }`}
+                ></div>
+                <p className={styles.solutionList}>{value}</p>
+              </div>
+            )
+          })}
+        </div>
+      )}
+
+      <div className={styles.solutionImage}>
+        <img src={data.img} alt='logo' />
+      </div>
+    </div>
+  )
+}
+
+export function NextProjectButton({ data }) {
+  const { light } = useContext(ThemeContext)
+  return (
+    <div className={styles.nextCon}>
+      <div className={styles.nextBtnContainer}>
+        <Link
+          to={data.link}
+          className={`${styles.nextBtn} ${
+            light ? styles.nextBtnLight : styles.nextBtnDark
+          }`}
+        >
+          <p>{data.btnText}</p>
+          <AiOutlineRight className={styles.arrow} size={20} />
+        </Link>
+      </div>
+    </div>
+  )
+}
+
 ProjectBackgroundTitle.propTypes = {
   title: PropTypes.string.isRequired,
 }
@@ -244,5 +492,16 @@ ProjectResearch.propTypes = {
   researchData: PropTypes.shape({
     title: PropTypes.string.isRequired,
     description: PropTypes.string.isRequired,
+  }),
+}
+
+SolutionCard.propTypes = {
+  data: PropTypes.object.isRequired,
+}
+
+NextProjectButton.propTypes = {
+  data: PropTypes.shape({
+    link: PropTypes.string.isRequired,
+    btnText: PropTypes.string.isRequired,
   }),
 }

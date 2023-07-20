@@ -5,6 +5,14 @@ import insightMobile from './insightMobile.svg'
 import reconnectFlower from './reconnectFlower.svg'
 import reconnectFlowerLight from './reconnectFlower.svg'
 import researchAssumptions from './researchAssumptions.svg'
+import informationArchitectureImg from './informationArchitecture.svg'
+import userFlowImg from './userFlow.svg'
+import wireframeImg from './wireframe.svg'
+import theVisuals from './theVisuals.svg'
+import solutionUnlock from './solutionUnlock.svg'
+import solutionPeople from './solutionPeople.svg'
+import solutionProfile from './solutionProfile.svg'
+import solutionMeet from './solutionMeet.svg'
 
 export {
   auditDesktop,
@@ -14,4 +22,12 @@ export {
   reconnectFlower,
   reconnectFlowerLight,
   researchAssumptions,
+  informationArchitectureImg,
+  userFlowImg,
+  wireframeImg,
+  theVisuals,
+  solutionUnlock,
+  solutionPeople,
+  solutionProfile,
+  solutionMeet,
 }

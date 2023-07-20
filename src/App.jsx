@@ -7,6 +7,7 @@ import Intro from './pages/Intro'
 import Home from './pages/Home'
 import About from './pages/About'
 import Reconnect from './pages/Reconnect'
+import Danflight from './pages/Danflight'
 
 function App() {
   const [display, setDisplay] = useState(true)
@@ -27,6 +28,7 @@ function App() {
             <Route index element={<Home />} />
             <Route path='/about' element={<About />} />
             <Route path='/reconnect' element={<Reconnect />} />
+            <Route path='/danflight' element={<Danflight />} />
           </Routes>
         </BrowserRouter>
       )}

@@ -1,0 +1,8 @@
+@use '../../scss/global/colors' as colors;
+@use '../../scss/utils/functions' as fn;
+@import '../../scss/utils/mixins';
+@import '../../scss/utils/breakpoints';
+
+.danFlightContainer {
+  margin-block-start: fn.rem(50);
+}

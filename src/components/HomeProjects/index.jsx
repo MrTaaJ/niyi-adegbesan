@@ -44,7 +44,7 @@ function HomeProjects() {
         'A mobile app to book ride especially during the peak hours. Specially designed for corporate employees and private riders.',
       btnText: 'View Case study',
       img: project03,
-      link: '/',
+      link: '/danflight',
     },
     {
       number: '04',
@@ -53,7 +53,7 @@ function HomeProjects() {
         'A smart and low internet dependent app that monitor your journey and alert you when closer to your stop. You never get to miss your stop with WAKER!',
       btnText: 'View Case study',
       img: project04,
-      link: '/',
+      link: '/wakers',
     },
   ]
   return (
