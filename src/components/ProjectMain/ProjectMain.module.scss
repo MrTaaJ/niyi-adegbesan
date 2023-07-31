@@ -112,14 +112,17 @@
     opacity: 0.9;
   }
 }
+.projectBriefSubtitleCon {
+  @include flex_column;
+  gap: fn.rem(20);
 
-.projectBriefSubtitle {
-  font-size: clamp(fn.rem(14), fn.rem(10) + 1vw, fn.rem(16));
-  line-height: clamp(fn.rem(20), fn.rem(14) + 1.5vw, fn.rem(24));
-  font-weight: 400;
-  opacity: 0.8;
+  .projectBriefSubtitle {
+    font-size: clamp(fn.rem(14), fn.rem(10) + 1vw, fn.rem(16));
+    line-height: clamp(fn.rem(20), fn.rem(14) + 1.5vw, fn.rem(24));
+    font-weight: 400;
+    opacity: 0.8;
+  }
 }
-
 .researchContainer {
   @include flex_centered;
   @include flex_column;

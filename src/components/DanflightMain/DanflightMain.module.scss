@@ -1,0 +1,159 @@
+@use '../../scss/global/colors' as colors;
+@use '../../scss/utils/functions' as fn;
+@import '../../scss/utils/mixins';
+@import '../../scss/utils/breakpoints';
+
+.lightText {
+  color: colors.$text-light;
+}
+
+.darkText {
+  color: colors.$text-dark;
+}
+
+.projectMainContainer {
+  @include flex_column;
+  gap: fn.rem(50);
+
+  .projectMainOverview {
+    @include flex_column;
+    gap: fn.rem(20);
+
+    .briefsCon {
+      @include flex_column;
+      gap: fn.rem(15);
+    }
+  }
+
+  .projectResearchCon,
+  .projectRepeatCardCon,
+  .projectAuditCon,
+  .projectPrimaryCon {
+    @include flex_column;
+    gap: fn.rem(20);
+
+    .projectResearch {
+      @include flex_centered;
+      align-items: flex-start;
+      gap: fn.rem(30);
+      flex-wrap: wrap;
+    }
+    .projectRepeatCardImage,
+    .projectAuditImage {
+      @include flex_centered;
+      width: 100%;
+
+      img {
+        width: 100%;
+        background-position: center center;
+        background-size: cover;
+        background-repeat: no-repeat;
+
+        @include breakpoint-up(md) {
+          width: 80%;
+        }
+      }
+    }
+
+    .projectPrimaryInsightful {
+      @include flex_centered;
+      @include flex_column;
+
+      .insightful {
+        font-family: 'Manrope';
+        font-size: clamp(fn.rem(16), fn.rem(12) + 1vw, fn.rem(20));
+        font-weight: 600;
+      }
+    }
+
+    .theSolutionCon {
+      @include flex_column;
+      gap: fn.rem(30);
+
+      @include breakpoint-up(md) {
+        @include flex;
+      }
+    }
+  }
+
+  .visualsCardCon {
+    @include flex;
+    justify-content: center;
+    gap: fn.rem(50);
+    flex-wrap: wrap;
+  }
+}
+
+.architectureFlowImg {
+  padding: fn.rem(20);
+  border-radius: fn.rem(8);
+}
+
+.lightImgBg {
+  background-color: rgba(87, 87, 87, 0.3);
+}
+
+.darkImgBg {
+  background-color: colors.$light-bg;
+}
+
+.solutionCardContainer {
+  @include flex_column;
+  .solutionCardNumber {
+    font-size: clamp(fn.rem(24), fn.rem(16) + 1vw, fn.rem(44));
+    font-weight: 500;
+    font-family: 'Oswald';
+    text-align: left;
+    color: rgba(119, 119, 119, 1);
+    margin-block: fn.rem(30) 0;
+  }
+  .solutionListsCon {
+    margin-block-start: fn.rem(20);
+
+    .solutionListCon {
+      width: 100%;
+      @include flex;
+      gap: fn.rem(10);
+      padding: fn.rem(5);
+      align-items: center;
+
+      .solutionListDot {
+        width: fn.rem(8);
+        height: fn.rem(8);
+        border-radius: 50%;
+        opacity: 0.8;
+      }
+
+      .lightDot {
+        background-color: colors.$text-light;
+      }
+
+      .darkDot {
+        background-color: colors.$text-dark;
+      }
+
+      .solutionList {
+        font-size: clamp(fn.rem(14), fn.rem(10) + 1vw, fn.rem(16));
+        line-height: clamp(fn.rem(20), fn.rem(14) + 1.5vw, fn.rem(24));
+        font-weight: 400;
+        opacity: 0.8;
+      }
+    }
+  }
+
+  .solutionImage {
+    @include flex_centered;
+    width: 100%;
+    margin-block-start: fn.rem(40);
+
+    img {
+      background-position: center center;
+      background-size: cover;
+      background-repeat: no-repeat;
+    }
+  }
+
+  @include breakpoint-up(md) {
+    width: 42%;
+  }
+}

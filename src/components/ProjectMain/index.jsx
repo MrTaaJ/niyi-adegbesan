@@ -41,90 +41,106 @@ export default function ProjectMain() {
   const briefsData = [
     {
       title: 'Brief',
-      brief:
+      briefs: [
         'Through independent research and effort, analysis of specific needs and opportunities, I found the need to create a system and visual narrative with unique and unified outcome. A system that improve social interaction and strengthen family ecosystem.',
+      ],
     },
     {
       title: 'Approach',
-      brief:
+      briefs: [
         'I divided the process into Research, Strategy, Ideate, Design and Testing. Research allowed me to dig into the topic and figure out the best approach and design that best solve the problem. For strategy, I focus on breaking down my finding into design objectives. These objectives allowed me to enter into the phase where I had a thorough process of Sketching, Wireframing, Iterating and Testing.',
+      ],
     },
     {
       title: 'Outcome',
-      brief:
+      briefs: [
         'From research and ideation, I created with-me, a mobile social app that allows friends within proximity to find and connect each other with the triple bottom lines (people, profit and planet). The design brings access to real time awareness of friends around and also improve social connectivity. Most importantly bridging gap and affirming best guess of friends around. Cool you say? Yeah! Cool.',
+      ],
     },
   ]
 
   const researchData = [
     {
       title: 'Type',
-      description:
-        'In order to understand user behavior, experience and acceptance of social-platform app, I conducted a  qaulitative survey with 15 people of age 22 - 49 years (all gender) to know issues faced while trying to link up with friends with their perimeters.',
+      descriptions: [
+        'In order to understand user behavior, experience and acceptance of social-platform app, I conducted a  qualitative survey with 15 people of age 22 - 49 years (all gender) to know issues faced while trying to link up with friends with their perimeters.',
+      ],
     },
     {
       title: 'Goal',
-      description:
-        'It is centred around understanding how users adopt social-platform app and their interactions with such app. To gain indepth knowledge on user expectations and objectives when using such app. The research is also to help in identifying the opportunities and scalability of the product.',
+      descriptions: [
+        'It is centred around understanding how users adopt social-platform app and their interactions with such app. To gain in-depth knowledge on user expectations and objectives when using such app. The research is also to help in identifying the opportunities and scalability of the product.',
+      ],
     },
     {
       title: 'Pattern',
-      description:
-        'The research questions is delibrately constructed around understanding user’s needs (expectations), behaviours, experience and interactive nature.',
+      descriptions: [
+        'The research questions is deliberately constructed around understanding user’s needs (expectations), behaviours, experience and interactive nature.',
+      ],
     },
   ]
 
   const audit = {
-    brief:
+    briefs: [
       'It was a bit of shock that there was no well known social app in Nigeria providing a location based service (LBS) in real time for app specifically designed for reuniting friends as at the the time of this project. Hence, I opted for non-African based apps providing services in close range to what I am about to create to better understand the market.',
+    ],
   }
 
   const primaryResearch = [
     {
-      brief:
+      briefs: [
         'I interviewed 15 people of different work background and demography to find out their pain points and needs when trying to connect with loved ones within their proximities. Findings from this research formed the basis of my insight and solution.',
+      ],
     },
     {
-      brief:
+      briefs: [
         'Traditionally, people find research to be a kind of boring and stressful thing to do, but adopting a new trend, especially as a designer, it’s much exciting than ever. Most of these characters have great connection with the problem and have got creative minds, I consider some as friends now though.',
+      ],
     },
   ]
 
   const foundationalAssumption = {
-    brief:
+    briefs: [
       'Findings from the primary research was the basis for foundational assumptions. I grouped them into sections based on the hypothesis and inferences formed in the  research process.',
+    ],
   }
 
   const inferences = {
-    brief:
+    briefs: [
       'From the foundational assumption which formed the basis of my inference, I was able to create insights which formed the pivot of the proposed solution.',
+    ],
   }
 
   const solution = {
-    brief:
+    briefs: [
       'To design a social app that helps people find friends and loved ones within proximity in realtime, I started off by creating information architecture and  further it with a user-flow to show a pictorial representation of how a user will navigate the app.',
+    ],
   }
 
   const informationArchitecture = {
     title: 'Information Architecture',
-    brief:
+    briefs: [
       'Gathering all research findings and insight, I started off the design process by creating an information architecture of the solution. This part help me to break the feature into chunks and make it easy for user to understand the product.',
+    ],
   }
 
   const userFlow = {
     title: 'User FLow',
-    brief:
+    briefs: [
       'I went on with designing a simple user flow describing actions a user would take and the screens they would encounter to complete a task, as a user navigates through, to ensure a more seamless and flexible user experience.',
+    ],
   }
 
   const wireframe = {
-    brief:
+    briefs: [
       'I realized with-me has the potential to connect people through a GPS powered system, I create a Lo-Fi prototype of a digital wireframe to show how users will interact with the solution and the experiences of it. My decisions during this phase were based on findings and assumptions gathered during the research phase.',
+    ],
   }
 
   const visuals = {
-    brief:
+    briefs: [
       'In this phase, I improved on the wireframe which represented my idea of what I wanted the solution to look like. one of the biggest challenge i had during this phase was a choice of color and typography that will best communicate the right emotion and feeling.  Eventually, after several trials, i arrived at what i felt was cool and would be a great fit for the app.',
+    ],
   }
 
   const solutionCardData = [
@@ -176,27 +192,20 @@ export default function ProjectMain() {
     },
   ]
 
-  const usabilityTest = [
-    {
-      brief:
-        'I tested the design with users across various demography using various testing methods and techniques to identify area of concerns and to make iteration on improving the user experience.',
-    },
-    {
-      brief:
-        'During this phase, I created a prioritization map to categorize users concerns into P0, P1, P3 & P4. In this current phase, P0 & P1 were considered in the improved screens to make up the current final design. Overtime, more reviews and tests would be carried out to continuously improve the usability strength of this solution.',
-    },
-  ]
+  const usabilityTest = {
+    briefs: [
+      'I tested the design with users across various demography using various testing methods and techniques to identify area of concerns and to make iteration on improving the user experience.',
 
-  const reflection = [
-    {
-      brief:
-        'Being a social enthusiast myself, working on with-me was incredibly rewarding. I got to experiment with some of the new Figma features, and narrowed down my design process. Although I was not able to fully flesh out some other features and designs I wanted within with-me due to a few constraints, it’s not to say I won’t try to incorporate them in future projects down the line.',
-    },
-    {
-      brief:
-        'I also got to have conversation with new folks, those I consider friends now. Feels good and I hope everyone gets to have an exciting moment with this magic I made for you all.',
-    },
-  ]
+      'During this phase, I created a prioritization map to categorize users concerns into P0, P1, P3 & P4. In this current phase, P0 & P1 were considered in the improved screens to make up the current final design. Overtime, more reviews and tests would be carried out to continuously improve the usability strength of this solution.',
+    ],
+  }
+
+  const reflection = {
+    briefs: [
+      'Being a social enthusiast myself, working on with-me was incredibly rewarding. I got to experiment with some of the new Figma features, and narrowed down my design process. Although I was not able to fully flesh out some other features and designs I wanted within with-me due to a few constraints, it’s not to say I won’t try to incorporate them in future projects down the line.',
+      'I also got to have conversation with new folks, those I consider friends now. Feels good and I hope everyone gets to have an exciting moment with this magic I made for you all.',
+    ],
+  }
 
   return (
     <Container>
@@ -359,16 +368,14 @@ export default function ProjectMain() {
         <div className={styles.usabilityReflection}>
           <div className={styles.usability}>
             <ProjectBackgroundTitle title={'Usability Test & Improvement'} />
-            {usabilityTest.map((data, index) => (
-              <ProjectBrief briefData={data} key={index} />
-            ))}
+
+            <ProjectBrief briefData={usabilityTest} />
           </div>
 
           <div className={styles.reflection}>
             <ProjectBackgroundTitle title={'Reflection!'} />
-            {reflection.map((data, index) => (
-              <ProjectBrief briefData={data} key={index} />
-            ))}
+
+            <ProjectBrief briefData={reflection} />
           </div>
         </div>
 
@@ -391,13 +398,18 @@ export function ProjectBrief({ briefData }) {
       {briefData.title && (
         <h3 className={styles.projectBriefTitle}>{briefData.title}</h3>
       )}
-      <p
-        className={`${styles.projectBriefSubtitle} ${
-          light ? styles.lightText : styles.darkText
-        }`}
-      >
-        {briefData.brief}
-      </p>
+      <div className={`${styles.projectBriefSubtitleCon}`}>
+        {briefData.briefs.map((brief, index) => (
+          <p
+            className={`${styles.projectBriefSubtitle} ${
+              light ? styles.lightText : styles.darkText
+            }`}
+            key={index}
+          >
+            {brief}
+          </p>
+        ))}
+      </div>
     </div>
   )
 }
@@ -413,27 +425,33 @@ export function ProjectResearch({ researchData }) {
         />
         <p className={styles.researchDataTitle}>{researchData.title}</p>
       </div>
-      <p
-        className={`${styles.projectBriefSubtitle} ${
-          light ? styles.lightText : styles.darkText
-        }`}
-      >
-        {researchData.description}
-      </p>
+
+      <div className={`${styles.projectBriefSubtitleCon}`}>
+        {researchData.descriptions.map((description, index) => (
+          <p
+            className={`${styles.projectBriefSubtitle} ${
+              light ? styles.lightText : styles.darkText
+            }`}
+            key={index}
+          >
+            {description}
+          </p>
+        ))}
+      </div>
     </div>
   )
 }
 
 export function SolutionCard({ data }) {
   const { light } = useContext(ThemeContext)
-  const brief = {
+  const briefContent = {
     title: data.title,
-    brief: data.description,
+    briefs: [data.description],
   }
   return (
     <div className={styles.solutionCardContainer}>
       <h3 className={styles.solutionCardNumber}>{data.number}</h3>
-      <ProjectBrief briefData={brief} />
+      <ProjectBrief briefData={briefContent} />
       {data.list && (
         <div className={styles.solutionListsCon}>
           {data.list.map((value, index) => {
@@ -484,14 +502,14 @@ ProjectBackgroundTitle.propTypes = {
 ProjectBrief.propTypes = {
   briefData: PropTypes.shape({
     title: PropTypes.string,
-    brief: PropTypes.string,
+    briefs: PropTypes.arrayOf(PropTypes.string),
   }),
 }
 
 ProjectResearch.propTypes = {
   researchData: PropTypes.shape({
     title: PropTypes.string.isRequired,
-    description: PropTypes.string.isRequired,
+    descriptions: PropTypes.arrayOf(PropTypes.string),
   }),
 }
 

@@ -1,11 +1,11 @@
 //COMPONENTS
 import Layout from '../../layout/Layout'
 import ProjectHero from '../../components/ProjectHero'
+import DanflightMain from '../../components/DanflightMain'
 
 //STYLES
 import styles from './Danflight.module.scss'
 import project03 from '../../assets/Project/project03.svg'
-import ProjectMain from '../../components/ProjectMain'
 
 export default function Reconnect() {
   const heroData = {
@@ -27,7 +27,7 @@ export default function Reconnect() {
     <Layout title='With-Me Reconnects'>
       <div className={styles.danFlightContainer}>
         <ProjectHero data={heroData} />
-        <ProjectMain />
+        <DanflightMain />
       </div>
     </Layout>
   )
