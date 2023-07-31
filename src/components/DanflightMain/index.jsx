@@ -2,7 +2,7 @@
 import { useContext, useEffect, useState } from 'react'
 import { ThemeContext } from '../../contexts/ThemeContext'
 import PropTypes from 'prop-types'
-import { Link } from 'react-router-dom'
+// import { Link } from 'react-router-dom'
 
 //COMPONENTS
 import {
